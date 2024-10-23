@@ -1,0 +1,234 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "MSI-Prestige",
+    "children" : [ {
+      "name" : "18092@MSI-Prestige.main(1)",
+      "children" : [ {
+        "name" : "testCreateCourierCode201",
+        "uid" : "f2c36a727fecabb7",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680515398,
+          "stop" : 1729680517274,
+          "duration" : 1876
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Creating an order with different colors",
+        "uid" : "84263e22436b6914",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "broken",
+        "time" : {
+          "start" : 1729680521152,
+          "stop" : 1729680522339,
+          "duration" : 1187
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login non-existent user returns error",
+        "uid" : "536564803c247970",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680549004,
+          "stop" : 1729680549719,
+          "duration" : 715
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testCreateCourierOkTrue",
+        "uid" : "76851ff40435f1d2",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680513509,
+          "stop" : 1729680515390,
+          "duration" : 1881
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Missing required fields returns error",
+        "uid" : "48c7f5b4651fd381",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "failed",
+        "time" : {
+          "start" : 1729680553309,
+          "stop" : 1729680617181,
+          "duration" : 63872
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Get order list",
+        "uid" : "570dddb08422e68f",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680522347,
+          "stop" : 1729680548999,
+          "duration" : 26652
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Courier can be created and login",
+        "uid" : "6062229d0c739776",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680617187,
+          "stop" : 1729680619848,
+          "duration" : 2661
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Creating an order with different colors",
+        "uid" : "e1089cc957dcd97c",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "broken",
+        "time" : {
+          "start" : 1729680517301,
+          "stop" : 1729680518914,
+          "duration" : 1613
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Creating an order with different colors",
+        "uid" : "6f6898016d547b55",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "broken",
+        "time" : {
+          "start" : 1729680520083,
+          "stop" : 1729680521150,
+          "duration" : 1067
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testCreateCourierWithoutPassword",
+        "uid" : "7eb8b53ed51cb26f",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680508213,
+          "stop" : 1729680508900,
+          "duration" : 687
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testCreateCourierWithoutLogin",
+        "uid" : "19cdac3f109745bb",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680501299,
+          "stop" : 1729680505082,
+          "duration" : 3783
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testCreateCourierIsPossible",
+        "uid" : "da758ab1612661bc",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680511518,
+          "stop" : 1729680513501,
+          "duration" : 1983
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testCreateCourierWithAllRequiredFields",
+        "uid" : "3f2c9fbef4f4b587",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680509575,
+          "stop" : 1729680511506,
+          "duration" : 1931
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testErrorCreateTheSameCourier",
+        "uid" : "e1cf1a31d892097c",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680505166,
+          "stop" : 1729680508205,
+          "duration" : 3039
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testCreateCourierWithoutFirstName",
+        "uid" : "e4b3b43ad4a55f20",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "failed",
+        "time" : {
+          "start" : 1729680508905,
+          "stop" : 1729680509572,
+          "duration" : 667
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Creating an order with different colors",
+        "uid" : "a6b491c6e845fda2",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "broken",
+        "time" : {
+          "start" : 1729680518930,
+          "stop" : 1729680520081,
+          "duration" : 1151
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login with wrong credentials should fail",
+        "uid" : "4d8d244a3f827213",
+        "parentUid" : "fcfb7984de893b964efca1324b3f5339",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680549723,
+          "stop" : 1729680553307,
+          "duration" : 3584
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fcfb7984de893b964efca1324b3f5339"
+    } ],
+    "uid" : "b8030b0c79b61a08fe67e859b4ce3a6a"
+  } ]
+}

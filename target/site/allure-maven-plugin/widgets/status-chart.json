@@ -1,0 +1,171 @@
+[ {
+  "uid" : "19cdac3f109745bb",
+  "name" : "testCreateCourierWithoutLogin",
+  "time" : {
+    "start" : 1729680501299,
+    "stop" : 1729680505082,
+    "duration" : 3783
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e1cf1a31d892097c",
+  "name" : "testErrorCreateTheSameCourier",
+  "time" : {
+    "start" : 1729680505166,
+    "stop" : 1729680508205,
+    "duration" : 3039
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4d8d244a3f827213",
+  "name" : "Login with wrong credentials should fail",
+  "time" : {
+    "start" : 1729680549723,
+    "stop" : 1729680553307,
+    "duration" : 3584
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "84263e22436b6914",
+  "name" : "Creating an order with different colors",
+  "time" : {
+    "start" : 1729680521152,
+    "stop" : 1729680522339,
+    "duration" : 1187
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "e1089cc957dcd97c",
+  "name" : "Creating an order with different colors",
+  "time" : {
+    "start" : 1729680517301,
+    "stop" : 1729680518914,
+    "duration" : 1613
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "a6b491c6e845fda2",
+  "name" : "Creating an order with different colors",
+  "time" : {
+    "start" : 1729680518930,
+    "stop" : 1729680520081,
+    "duration" : 1151
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "7eb8b53ed51cb26f",
+  "name" : "testCreateCourierWithoutPassword",
+  "time" : {
+    "start" : 1729680508213,
+    "stop" : 1729680508900,
+    "duration" : 687
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6f6898016d547b55",
+  "name" : "Creating an order with different colors",
+  "time" : {
+    "start" : 1729680520083,
+    "stop" : 1729680521150,
+    "duration" : 1067
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "f2c36a727fecabb7",
+  "name" : "testCreateCourierCode201",
+  "time" : {
+    "start" : 1729680515398,
+    "stop" : 1729680517274,
+    "duration" : 1876
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "570dddb08422e68f",
+  "name" : "Get order list",
+  "time" : {
+    "start" : 1729680522347,
+    "stop" : 1729680548999,
+    "duration" : 26652
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3f2c9fbef4f4b587",
+  "name" : "testCreateCourierWithAllRequiredFields",
+  "time" : {
+    "start" : 1729680509575,
+    "stop" : 1729680511506,
+    "duration" : 1931
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "76851ff40435f1d2",
+  "name" : "testCreateCourierOkTrue",
+  "time" : {
+    "start" : 1729680513509,
+    "stop" : 1729680515390,
+    "duration" : 1881
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e4b3b43ad4a55f20",
+  "name" : "testCreateCourierWithoutFirstName",
+  "time" : {
+    "start" : 1729680508905,
+    "stop" : 1729680509572,
+    "duration" : 667
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "536564803c247970",
+  "name" : "Login non-existent user returns error",
+  "time" : {
+    "start" : 1729680549004,
+    "stop" : 1729680549719,
+    "duration" : 715
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "48c7f5b4651fd381",
+  "name" : "Missing required fields returns error",
+  "time" : {
+    "start" : 1729680553309,
+    "stop" : 1729680617181,
+    "duration" : 63872
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "da758ab1612661bc",
+  "name" : "testCreateCourierIsPossible",
+  "time" : {
+    "start" : 1729680511518,
+    "stop" : 1729680513501,
+    "duration" : 1983
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6062229d0c739776",
+  "name" : "Courier can be created and login",
+  "time" : {
+    "start" : 1729680617187,
+    "stop" : 1729680619848,
+    "duration" : 2661
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

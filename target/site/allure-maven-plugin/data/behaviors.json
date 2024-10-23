@@ -1,0 +1,262 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Courier Management",
+    "children" : [ {
+      "name" : "Courier Creation",
+      "children" : [ {
+        "name" : "Validate error for missing required fields in courier creation",
+        "children" : [ {
+          "name" : "testCreateCourierWithoutLogin",
+          "uid" : "19cdac3f109745bb",
+          "parentUid" : "b84558fbbde65b100bc1732df1b5357a",
+          "status" : "passed",
+          "time" : {
+            "start" : 1729680501299,
+            "stop" : 1729680505082,
+            "duration" : 3783
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "testCreateCourierWithoutPassword",
+          "uid" : "7eb8b53ed51cb26f",
+          "parentUid" : "b84558fbbde65b100bc1732df1b5357a",
+          "status" : "passed",
+          "time" : {
+            "start" : 1729680508213,
+            "stop" : 1729680508900,
+            "duration" : 687
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "testCreateCourierWithoutFirstName",
+          "uid" : "e4b3b43ad4a55f20",
+          "parentUid" : "b84558fbbde65b100bc1732df1b5357a",
+          "status" : "failed",
+          "time" : {
+            "start" : 1729680508905,
+            "stop" : 1729680509572,
+            "duration" : 667
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "b84558fbbde65b100bc1732df1b5357a"
+      }, {
+        "name" : "Prevent duplicate courier creation",
+        "children" : [ {
+          "name" : "testErrorCreateTheSameCourier",
+          "uid" : "e1cf1a31d892097c",
+          "parentUid" : "35f15f5be7464a68933c974d19e5d582",
+          "status" : "passed",
+          "time" : {
+            "start" : 1729680505166,
+            "stop" : 1729680508205,
+            "duration" : 3039
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "35f15f5be7464a68933c974d19e5d582"
+      }, {
+        "name" : "Validate required fields for courier creation",
+        "children" : [ {
+          "name" : "testCreateCourierWithAllRequiredFields",
+          "uid" : "3f2c9fbef4f4b587",
+          "parentUid" : "983ec1bee7cf8a5c250ba1f6574f4b31",
+          "status" : "passed",
+          "time" : {
+            "start" : 1729680509575,
+            "stop" : 1729680511506,
+            "duration" : 1931
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "983ec1bee7cf8a5c250ba1f6574f4b31"
+      }, {
+        "name" : "Create a new courier",
+        "children" : [ {
+          "name" : "testCreateCourierIsPossible",
+          "uid" : "da758ab1612661bc",
+          "parentUid" : "c07fcc3dfa3b4a212f2fc98b6404e008",
+          "status" : "passed",
+          "time" : {
+            "start" : 1729680511518,
+            "stop" : 1729680513501,
+            "duration" : 1983
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "c07fcc3dfa3b4a212f2fc98b6404e008"
+      }, {
+        "name" : "Validate 'ok: true' for successful courier creation",
+        "children" : [ {
+          "name" : "testCreateCourierOkTrue",
+          "uid" : "76851ff40435f1d2",
+          "parentUid" : "73ee574b1d90e656caf08146b9da5c38",
+          "status" : "passed",
+          "time" : {
+            "start" : 1729680513509,
+            "stop" : 1729680515390,
+            "duration" : 1881
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "73ee574b1d90e656caf08146b9da5c38"
+      }, {
+        "name" : "Validate status code 201 for successful courier creation",
+        "children" : [ {
+          "name" : "testCreateCourierCode201",
+          "uid" : "f2c36a727fecabb7",
+          "parentUid" : "3380c42399802ed7f09fe40e0572d46f",
+          "status" : "passed",
+          "time" : {
+            "start" : 1729680515398,
+            "stop" : 1729680517274,
+            "duration" : 1876
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "3380c42399802ed7f09fe40e0572d46f"
+      } ],
+      "uid" : "99836e8d86244258858696049fb58777"
+    }, {
+      "name" : "Courier Login",
+      "children" : [ {
+        "name" : "Login non-existent user returns error",
+        "uid" : "536564803c247970",
+        "parentUid" : "aaf5f6eda2e476ad90f840567caa684c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680549004,
+          "stop" : 1729680549719,
+          "duration" : 715
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login with wrong credentials should fail",
+        "uid" : "4d8d244a3f827213",
+        "parentUid" : "aaf5f6eda2e476ad90f840567caa684c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680549723,
+          "stop" : 1729680553307,
+          "duration" : 3584
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Missing required fields returns error",
+        "uid" : "48c7f5b4651fd381",
+        "parentUid" : "aaf5f6eda2e476ad90f840567caa684c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1729680553309,
+          "stop" : 1729680617181,
+          "duration" : 63872
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Courier can be created and login",
+        "uid" : "6062229d0c739776",
+        "parentUid" : "aaf5f6eda2e476ad90f840567caa684c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1729680617187,
+          "stop" : 1729680619848,
+          "duration" : 2661
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "aaf5f6eda2e476ad90f840567caa684c"
+    } ],
+    "uid" : "6361ce845802a9f119f7c0e60fb1666c"
+  }, {
+    "name" : "Creating an order with different colors",
+    "uid" : "e1089cc957dcd97c",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1729680517301,
+      "stop" : 1729680518914,
+      "duration" : 1613
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Creating an order with different colors",
+    "uid" : "a6b491c6e845fda2",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1729680518930,
+      "stop" : 1729680520081,
+      "duration" : 1151
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Creating an order with different colors",
+    "uid" : "6f6898016d547b55",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1729680520083,
+      "stop" : 1729680521150,
+      "duration" : 1067
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Creating an order with different colors",
+    "uid" : "84263e22436b6914",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1729680521152,
+      "stop" : 1729680522339,
+      "duration" : 1187
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Get order list",
+    "uid" : "570dddb08422e68f",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1729680522347,
+      "stop" : 1729680548999,
+      "duration" : 26652
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}
