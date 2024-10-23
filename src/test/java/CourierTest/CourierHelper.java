@@ -1,12 +1,14 @@
 package CourierTest;
 
 import com.google.gson.Gson;
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 public class CourierHelper {
 
     // Метод для получения ID курьера по логину и паролю
+    @Step("get courier Id")
     public int getCourierId(String login, String password) {
         Response response = RestAssured.given()
                 .header("Content-Type", "application/json")
@@ -22,6 +24,7 @@ public class CourierHelper {
     }
 
     // Метод для удаления курьера по его ID
+    @Step("delete courier")
     public void deleteCourier(int courierId) {
         RestAssured.given()
                 .header("Content-Type", "application/json")
@@ -33,6 +36,7 @@ public class CourierHelper {
     }
 
     // Метод для вывода кода ответа и тела ответа
+    @Step("print response")
     public void printResponse(Response response, Gson gson) {
         String responseBody = response.getBody().asString();
 
