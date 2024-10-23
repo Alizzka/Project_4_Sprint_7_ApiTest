@@ -7,13 +7,13 @@
       "name" : "\nExpected: is <400>\n     but: was <201>",
       "children" : [ {
         "name" : "testCreateCourierWithoutFirstName",
-        "uid" : "e4b3b43ad4a55f20",
+        "uid" : "4ad99956792f0e4b",
         "parentUid" : "4e2c672aa6127a2b48d0b5fa34e3f6c6",
         "status" : "failed",
         "time" : {
-          "start" : 1729680508905,
-          "stop" : 1729680509572,
-          "duration" : 667
+          "start" : 1729681998934,
+          "stop" : 1729681999608,
+          "duration" : 674
         },
         "flaky" : false,
         "newFailed" : false,
@@ -24,13 +24,13 @@
       "name" : "1 expectation failed.\nExpected status code <200> but was <404>.\n",
       "children" : [ {
         "name" : "Missing required fields returns error",
-        "uid" : "48c7f5b4651fd381",
+        "uid" : "fa86b18728c1611f",
         "parentUid" : "49e8c4ba724989b1644f4c577d398c8b",
         "status" : "failed",
         "time" : {
-          "start" : 1729680553309,
-          "stop" : 1729680617181,
-          "duration" : 63872
+          "start" : 1729682074654,
+          "stop" : 1729682138352,
+          "duration" : 63698
         },
         "flaky" : false,
         "newFailed" : false,
@@ -45,52 +45,52 @@
       "name" : "Ошибка при удалении заказа. Код ответа: 404, Тело ответа: {\"code\":404,\"message\":\"Not Found.\"}",
       "children" : [ {
         "name" : "Creating an order with different colors",
-        "uid" : "e1089cc957dcd97c",
+        "uid" : "c20343696da63cf2",
         "parentUid" : "6daf7830dbadefb8e71fef4c5ff840e6",
         "status" : "broken",
         "time" : {
-          "start" : 1729680517301,
-          "stop" : 1729680518914,
-          "duration" : 1613
+          "start" : 1729682007378,
+          "stop" : 1729682009055,
+          "duration" : 1677
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "Creating an order with different colors",
-        "uid" : "a6b491c6e845fda2",
+        "uid" : "13bb9bdb8217e156",
         "parentUid" : "6daf7830dbadefb8e71fef4c5ff840e6",
         "status" : "broken",
         "time" : {
-          "start" : 1729680518930,
-          "stop" : 1729680520081,
-          "duration" : 1151
+          "start" : 1729682009057,
+          "stop" : 1729682010186,
+          "duration" : 1129
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "Creating an order with different colors",
-        "uid" : "6f6898016d547b55",
+        "uid" : "acaf1ca2ccc1ed32",
         "parentUid" : "6daf7830dbadefb8e71fef4c5ff840e6",
         "status" : "broken",
         "time" : {
-          "start" : 1729680520083,
-          "stop" : 1729680521150,
-          "duration" : 1067
+          "start" : 1729682010189,
+          "stop" : 1729682011221,
+          "duration" : 1032
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "Creating an order with different colors",
-        "uid" : "84263e22436b6914",
+        "uid" : "4cff9c8613834d3c",
         "parentUid" : "6daf7830dbadefb8e71fef4c5ff840e6",
         "status" : "broken",
         "time" : {
-          "start" : 1729680521152,
-          "stop" : 1729680522339,
-          "duration" : 1187
+          "start" : 1729682011224,
+          "stop" : 1729682012307,
+          "duration" : 1083
         },
         "flaky" : false,
         "newFailed" : false,

@@ -5,104 +5,104 @@
     "name" : "CourierTest.CourierTest",
     "children" : [ {
       "name" : "testCreateCourierWithoutLogin",
-      "uid" : "19cdac3f109745bb",
+      "uid" : "5f26e17b5fef133a",
       "parentUid" : "a8a78d6f3bcb9ddebbcd536d72845b2a",
       "status" : "passed",
       "time" : {
-        "start" : 1729680501299,
-        "stop" : 1729680505082,
-        "duration" : 3783
+        "start" : 1729681990929,
+        "stop" : 1729681995210,
+        "duration" : 4281
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "testErrorCreateTheSameCourier",
-      "uid" : "e1cf1a31d892097c",
+      "uid" : "9cfb12dd92a3dfb6",
       "parentUid" : "a8a78d6f3bcb9ddebbcd536d72845b2a",
       "status" : "passed",
       "time" : {
-        "start" : 1729680505166,
-        "stop" : 1729680508205,
-        "duration" : 3039
+        "start" : 1729681995349,
+        "stop" : 1729681998310,
+        "duration" : 2961
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "testCreateCourierWithoutPassword",
-      "uid" : "7eb8b53ed51cb26f",
+      "uid" : "35a2231fbe30b2b1",
       "parentUid" : "a8a78d6f3bcb9ddebbcd536d72845b2a",
       "status" : "passed",
       "time" : {
-        "start" : 1729680508213,
-        "stop" : 1729680508900,
-        "duration" : 687
+        "start" : 1729681998319,
+        "stop" : 1729681998929,
+        "duration" : 610
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "testCreateCourierWithoutFirstName",
-      "uid" : "e4b3b43ad4a55f20",
+      "uid" : "4ad99956792f0e4b",
       "parentUid" : "a8a78d6f3bcb9ddebbcd536d72845b2a",
       "status" : "failed",
       "time" : {
-        "start" : 1729680508905,
-        "stop" : 1729680509572,
-        "duration" : 667
+        "start" : 1729681998934,
+        "stop" : 1729681999608,
+        "duration" : 674
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "testCreateCourierWithAllRequiredFields",
-      "uid" : "3f2c9fbef4f4b587",
+      "uid" : "e85310c3909701",
       "parentUid" : "a8a78d6f3bcb9ddebbcd536d72845b2a",
       "status" : "passed",
       "time" : {
-        "start" : 1729680509575,
-        "stop" : 1729680511506,
-        "duration" : 1931
+        "start" : 1729681999612,
+        "stop" : 1729682001598,
+        "duration" : 1986
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "testCreateCourierIsPossible",
-      "uid" : "da758ab1612661bc",
+      "uid" : "e7e2047bf2c91d06",
       "parentUid" : "a8a78d6f3bcb9ddebbcd536d72845b2a",
       "status" : "passed",
       "time" : {
-        "start" : 1729680511518,
-        "stop" : 1729680513501,
-        "duration" : 1983
+        "start" : 1729682001609,
+        "stop" : 1729682003595,
+        "duration" : 1986
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "testCreateCourierOkTrue",
-      "uid" : "76851ff40435f1d2",
+      "uid" : "19619776b36023d9",
       "parentUid" : "a8a78d6f3bcb9ddebbcd536d72845b2a",
       "status" : "passed",
       "time" : {
-        "start" : 1729680513509,
-        "stop" : 1729680515390,
-        "duration" : 1881
+        "start" : 1729682003599,
+        "stop" : 1729682005509,
+        "duration" : 1910
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "testCreateCourierCode201",
-      "uid" : "f2c36a727fecabb7",
+      "uid" : "1004a7584fede1b1",
       "parentUid" : "a8a78d6f3bcb9ddebbcd536d72845b2a",
       "status" : "passed",
       "time" : {
-        "start" : 1729680515398,
-        "stop" : 1729680517274,
-        "duration" : 1876
+        "start" : 1729682005513,
+        "stop" : 1729682007356,
+        "duration" : 1843
       },
       "flaky" : false,
       "newFailed" : false,
@@ -113,52 +113,52 @@
     "name" : "CreateOrderTest.CreateOrderTest",
     "children" : [ {
       "name" : "Creating an order with different colors",
-      "uid" : "e1089cc957dcd97c",
+      "uid" : "c20343696da63cf2",
       "parentUid" : "729159ec986d0063f7660e91bc21bd63",
       "status" : "broken",
       "time" : {
-        "start" : 1729680517301,
-        "stop" : 1729680518914,
-        "duration" : 1613
+        "start" : 1729682007378,
+        "stop" : 1729682009055,
+        "duration" : 1677
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "Creating an order with different colors",
-      "uid" : "a6b491c6e845fda2",
+      "uid" : "13bb9bdb8217e156",
       "parentUid" : "729159ec986d0063f7660e91bc21bd63",
       "status" : "broken",
       "time" : {
-        "start" : 1729680518930,
-        "stop" : 1729680520081,
-        "duration" : 1151
+        "start" : 1729682009057,
+        "stop" : 1729682010186,
+        "duration" : 1129
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "Creating an order with different colors",
-      "uid" : "6f6898016d547b55",
+      "uid" : "acaf1ca2ccc1ed32",
       "parentUid" : "729159ec986d0063f7660e91bc21bd63",
       "status" : "broken",
       "time" : {
-        "start" : 1729680520083,
-        "stop" : 1729680521150,
-        "duration" : 1067
+        "start" : 1729682010189,
+        "stop" : 1729682011221,
+        "duration" : 1032
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "Creating an order with different colors",
-      "uid" : "84263e22436b6914",
+      "uid" : "4cff9c8613834d3c",
       "parentUid" : "729159ec986d0063f7660e91bc21bd63",
       "status" : "broken",
       "time" : {
-        "start" : 1729680521152,
-        "stop" : 1729680522339,
-        "duration" : 1187
+        "start" : 1729682011224,
+        "stop" : 1729682012307,
+        "duration" : 1083
       },
       "flaky" : false,
       "newFailed" : false,
@@ -169,13 +169,13 @@
     "name" : "CreateOrderTest.GetOrdersListTest",
     "children" : [ {
       "name" : "Get order list",
-      "uid" : "570dddb08422e68f",
+      "uid" : "5e1f1674974b31ef",
       "parentUid" : "4e9c045ca02bee543d41097d997e3d1c",
       "status" : "passed",
       "time" : {
-        "start" : 1729680522347,
-        "stop" : 1729680548999,
-        "duration" : 26652
+        "start" : 1729682012310,
+        "stop" : 1729682070099,
+        "duration" : 57789
       },
       "flaky" : false,
       "newFailed" : false,
@@ -186,52 +186,52 @@
     "name" : "LoginCourierTest.LoginCourierTest",
     "children" : [ {
       "name" : "Login non-existent user returns error",
-      "uid" : "536564803c247970",
+      "uid" : "40b4f7aa3125ee0",
       "parentUid" : "247ca0847dd1e468fb07fd3c8734ffd1",
       "status" : "passed",
       "time" : {
-        "start" : 1729680549004,
-        "stop" : 1729680549719,
-        "duration" : 715
+        "start" : 1729682070106,
+        "stop" : 1729682071019,
+        "duration" : 913
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "Login with wrong credentials should fail",
-      "uid" : "4d8d244a3f827213",
+      "uid" : "d3ea4ac049c3f2e0",
       "parentUid" : "247ca0847dd1e468fb07fd3c8734ffd1",
       "status" : "passed",
       "time" : {
-        "start" : 1729680549723,
-        "stop" : 1729680553307,
-        "duration" : 3584
+        "start" : 1729682071024,
+        "stop" : 1729682074650,
+        "duration" : 3626
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "Missing required fields returns error",
-      "uid" : "48c7f5b4651fd381",
+      "uid" : "fa86b18728c1611f",
       "parentUid" : "247ca0847dd1e468fb07fd3c8734ffd1",
       "status" : "failed",
       "time" : {
-        "start" : 1729680553309,
-        "stop" : 1729680617181,
-        "duration" : 63872
+        "start" : 1729682074654,
+        "stop" : 1729682138352,
+        "duration" : 63698
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "Courier can be created and login",
-      "uid" : "6062229d0c739776",
+      "uid" : "ef17c23d49cbd4c7",
       "parentUid" : "247ca0847dd1e468fb07fd3c8734ffd1",
       "status" : "passed",
       "time" : {
-        "start" : 1729680617187,
-        "stop" : 1729680619848,
-        "duration" : 2661
+        "start" : 1729682138356,
+        "stop" : 1729682140967,
+        "duration" : 2611
       },
       "flaky" : false,
       "newFailed" : false,
