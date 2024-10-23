@@ -8,3 +8,7 @@ maven-status/
 surefire-reports/
 test-classes/
 TestingAPI_Sprint_7.iml
+target/site/allure-maven-plugin/data/
+target/site/allure-maven-plugin/export/
+target/site/allure-maven-plugin/plugins/
+target/site/allure-maven-plugin/widgets/
