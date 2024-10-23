@@ -15,6 +15,7 @@ public class OrderClient {
     private static final String CANCEL_ORDER = "/api/v1/orders/finish";
     private static final String GET_ORDER_BY_TRACK = "/api/v1/orders/track";
 
+    //Метод для создания заказа
     @Step("Creating an order")
     public static Response createNewOrder(OrderCreate orderCreate) {
         Response response = given()
@@ -37,6 +38,7 @@ public class OrderClient {
         return response;
     }
 
+    //Метод для завершения заказа по Id
     @Step("Closing an order by ID")
     public static Response deleteOrder(String id) {
         Response response = given()
@@ -52,6 +54,7 @@ public class OrderClient {
         return response;
     }
 
+    //Метод для получения Id заказа по трек-номеру заказа
     @Step("Get order ID by track")
     public static String getOrderId(Response response) {
         // Получение трек-номера заказа
@@ -75,6 +78,7 @@ public class OrderClient {
         return orderId;
     }
 
+    //Метод для проверки успешности завершения заказа, сравнивая ожидаемого и фактического кода ответа и содержимого тела ответа.
     @Step("Comparison of expected order closure response code with actual one")
     public static void comparingSuccessfulOrderCancel(Response response, int expectedResponseCode) {
         if (response.getStatusCode() != expectedResponseCode) {
@@ -83,11 +87,13 @@ public class OrderClient {
         response.then().assertThat().body("ok", equalTo(true)).and().statusCode(expectedResponseCode);
     }
 
+    //Метод для сравнивнения ожидаемого кода ответа с фактическим, проверяет наличие трек-номера заказа
     @Step("Comparing the expected response code with the actual one")
     public static void comparingSuccessfulOrderSet(Response response, int responseCode) {
         response.then().assertThat().body("track", not(0)).and().statusCode(responseCode);
     }
 
+    //Метод для получения списка заказов и проверки статуса ответа
     @Step("Get Orders List")
     public static Response getAllOrders() {
         Response response = given()
@@ -132,6 +138,7 @@ public class OrderClient {
     private static final String CREATE_ORDERS = "/api/v1/orders";
     private static final String CANCEL_ORDER = "/api/v1/orders/finish";
 
+    //Метод для создания заказа
     @Step("Creating an order")
     public static Response createNewOrder(OrderCreate orderCreate) {
         Response response = given()
@@ -154,7 +161,7 @@ public class OrderClient {
         return response;
     }
 
-
+    //Метод для завершения заказа по трек-номеру заказа
     @Step("Closing an order by tracking number")
     public static Response deleteOrder(String track) {
         Response response = given()
@@ -170,6 +177,7 @@ public class OrderClient {
         return response;
     }
 
+    //Метод для проверки успешности завершения заказа, сравнивая ожидаемого и фактического кода ответа и содержимого тела ответа.
     @Step("Comparison of expected order closure response code with actual one")
     public static void comparingSuccessfulOrderCancel(Response response, int expectedResponseCode) {
         // Проверяем, что код ответа соответствует ожидаемому
@@ -179,11 +187,13 @@ public class OrderClient {
         response.then().assertThat().body("ok", equalTo(true)).and().statusCode(expectedResponseCode);
     }
 
+    //Метод для сравнения ожидаемого кода ответа с фактическим, проверяет наличие трек-номера заказа
     @Step("Comparing the expected response code with the actual one")
     public static void comparingSuccessfulOrderSet(Response response, int responseCode){
         response.then().assertThat().body("track", not(0)).and().statusCode(responseCode);
     }
 
+    //Метод для получения списка заказов и проверки статуса ответа
     @Step("Get Orders List")
     public static Response getAllOrders() {
         Response response = given()
@@ -215,6 +225,7 @@ public class OrderClient {
         return response;
     }
 
+    //Метод для получения трек-номера заказа
     @Step("Get order thrack")
     public static String getOrderTrack(Response response){
         String trackNumber = response.then().extract().body().asString();
