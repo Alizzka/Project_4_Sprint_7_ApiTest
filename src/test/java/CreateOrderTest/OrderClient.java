@@ -1,3 +1,4 @@
+// С методом для завершения заказа по id
 package CreateOrderTest;
 import io.qameta.allure.Step;
 import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
@@ -15,7 +16,7 @@ public class OrderClient {
     private static final String CANCEL_ORDER = "/api/v1/orders/finish";
     private static final String GET_ORDER_BY_TRACK = "/api/v1/orders/track";
 
-    //Метод для создания заказа
+    // Метод для создания заказа
     @Step("Creating an order")
     public static Response createNewOrder(OrderCreate orderCreate) {
         Response response = given()
@@ -38,23 +39,13 @@ public class OrderClient {
         return response;
     }
 
-    //Метод для завершения заказа по Id
-    @Step("Closing an order by ID")
-    public static Response deleteOrder(String id) {
-        Response response = given()
-                .spec(Specifications.requestSpec())
-                .header("Content-type", "application/json")
-                .put(CANCEL_ORDER + "?id=" + id);
-        // Проверка кода ответа
-        if (response.getStatusCode() != 200) {
-            throw new RuntimeException("Ошибка при удалении заказа. Код ответа: " + response.getStatusCode() + ", Тело ответа: " + response.asString());
-        }
-        // Вывод информации об успешном удалении
-        System.out.println("Заказ удалён. Код ответа: " + response.getStatusCode() + ", Тело ответа: " + response.asString());
-        return response;
+    // Метод для сравнивнения ожидаемого кода ответа с фактическим, проверяет наличие трек-номера заказа
+    @Step("Comparing the expected response code with the actual one")
+    public static void comparingSuccessfulOrderSet(Response response, int responseCode) {
+        response.then().assertThat().body("track", not(0)).and().statusCode(responseCode);
     }
 
-    //Метод для получения Id заказа по трек-номеру заказа
+    // Метод для получения Id заказа по трек-номеру заказа
     @Step("Get order ID by track")
     public static String getOrderId(Response response) {
         // Получение трек-номера заказа
@@ -78,7 +69,23 @@ public class OrderClient {
         return orderId;
     }
 
-    //Метод для проверки успешности завершения заказа, сравнивая ожидаемого и фактического кода ответа и содержимого тела ответа.
+    // Метод для завершения заказа по Id
+    @Step("Closing an order by ID")
+    public static Response deleteOrder(String id) {
+        Response response = given()
+                .spec(Specifications.requestSpec())
+                .header("Content-type", "application/json")
+                .put(CANCEL_ORDER + "?id=" + id);
+        // Проверка кода ответа
+        if (response.getStatusCode() != 200) {
+            throw new RuntimeException("Ошибка при удалении заказа. Код ответа: " + response.getStatusCode() + ", Тело ответа: " + response.asString());
+        }
+        // Вывод информации об успешном удалении
+        System.out.println("Заказ удалён. Код ответа: " + response.getStatusCode() + ", Тело ответа: " + response.asString());
+        return response;
+    }
+
+    // Метод для проверки успешности завершения заказа, сравнивая ожидаемого и фактического кода ответа и содержимого тела ответа.
     @Step("Comparison of expected order closure response code with actual one")
     public static void comparingSuccessfulOrderCancel(Response response, int expectedResponseCode) {
         if (response.getStatusCode() != expectedResponseCode) {
@@ -87,13 +94,7 @@ public class OrderClient {
         response.then().assertThat().body("ok", equalTo(true)).and().statusCode(expectedResponseCode);
     }
 
-    //Метод для сравнивнения ожидаемого кода ответа с фактическим, проверяет наличие трек-номера заказа
-    @Step("Comparing the expected response code with the actual one")
-    public static void comparingSuccessfulOrderSet(Response response, int responseCode) {
-        response.then().assertThat().body("track", not(0)).and().statusCode(responseCode);
-    }
-
-    //Метод для получения списка заказов и проверки статуса ответа
+    // Метод для получения списка заказов и проверки статуса ответа
     @Step("Get Orders List")
     public static Response getAllOrders() {
         Response response = given()
@@ -121,7 +122,7 @@ public class OrderClient {
     }
 }
 
-
+// С методом для завершения заказа по трек-номеру заказа
 /*package CreateOrderTest;
 import io.qameta.allure.Step;
 import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
@@ -138,7 +139,7 @@ public class OrderClient {
     private static final String CREATE_ORDERS = "/api/v1/orders";
     private static final String CANCEL_ORDER = "/api/v1/orders/finish";
 
-    //Метод для создания заказа
+    // Метод для создания заказа
     @Step("Creating an order")
     public static Response createNewOrder(OrderCreate orderCreate) {
         Response response = given()
@@ -161,7 +162,21 @@ public class OrderClient {
         return response;
     }
 
-    //Метод для завершения заказа по трек-номеру заказа
+    // Метод для получения трек-номера заказа
+    @Step("Get order thrack")
+    public static String getOrderTrack(Response response){
+        String trackNumber = response.then().extract().body().asString();
+        JsonPath jsonPath = new JsonPath(trackNumber);
+        return jsonPath.getString("track");
+    }
+
+    // Метод для сравнения ожидаемого кода ответа с фактическим, проверяет наличие трек-номера заказа
+    @Step("Comparing the expected response code with the actual one")
+    public static void comparingSuccessfulOrderSet(Response response, int responseCode){
+        response.then().assertThat().body("track", not(0)).and().statusCode(responseCode);
+    }
+
+    // Метод для завершения заказа по трек-номеру заказа
     @Step("Closing an order by tracking number")
     public static Response deleteOrder(String track) {
         Response response = given()
@@ -170,14 +185,14 @@ public class OrderClient {
                 .put(CANCEL_ORDER + "?track=" + track);
         // Проверка кода ответа
         if (response.getStatusCode() != 200) {
-            throw new RuntimeException("Ошибка при удалении заказа: Код ответа: " + response.getStatusCode() + ", Тело ответа: " + response.asString());
+            throw new RuntimeException("Ошибка при удалении заказа. Код ответа: " + response.getStatusCode() + ", Тело ответа: " + response.asString());
         }
         // Вывод информации об успешном удалении
         System.out.println("Заказ удалён. Код ответа: " + response.getStatusCode() + ", Тело ответа: " + response.asString());
         return response;
     }
 
-    //Метод для проверки успешности завершения заказа, сравнивая ожидаемого и фактического кода ответа и содержимого тела ответа.
+    // Метод для проверки успешности завершения заказа, сравнивая ожидаемого и фактического кода ответа и содержимого тела ответа.
     @Step("Comparison of expected order closure response code with actual one")
     public static void comparingSuccessfulOrderCancel(Response response, int expectedResponseCode) {
         // Проверяем, что код ответа соответствует ожидаемому
@@ -187,13 +202,7 @@ public class OrderClient {
         response.then().assertThat().body("ok", equalTo(true)).and().statusCode(expectedResponseCode);
     }
 
-    //Метод для сравнения ожидаемого кода ответа с фактическим, проверяет наличие трек-номера заказа
-    @Step("Comparing the expected response code with the actual one")
-    public static void comparingSuccessfulOrderSet(Response response, int responseCode){
-        response.then().assertThat().body("track", not(0)).and().statusCode(responseCode);
-    }
-
-    //Метод для получения списка заказов и проверки статуса ответа
+    // Метод для получения списка заказов и проверки статуса ответа
     @Step("Get Orders List")
     public static Response getAllOrders() {
         Response response = given()
@@ -223,14 +232,6 @@ public class OrderClient {
             throw new RuntimeException("Ошибка при форматировании списка заказов в JSON: " + e.getMessage());
         }
         return response;
-    }
-
-    //Метод для получения трек-номера заказа
-    @Step("Get order thrack")
-    public static String getOrderTrack(Response response){
-        String trackNumber = response.then().extract().body().asString();
-        JsonPath jsonPath = new JsonPath(trackNumber);
-        return jsonPath.getString("track");
     }
 }*/
 

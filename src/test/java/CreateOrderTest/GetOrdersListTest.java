@@ -1,5 +1,5 @@
-//Список заказов
-//Проверь, что в тело ответа возвращается список заказов.
+// Список заказов
+// Проверь, что в тело ответа возвращается список заказов.
 
 package CreateOrderTest;
 import io.qameta.allure.junit4.DisplayName;
@@ -9,7 +9,7 @@ import static org.apache.http.HttpStatus.SC_OK;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasSize;
 
-//Тест с отдельно созданным классом методов (как один из вариантов)
+// Тест с отдельно созданным классом методов (как один из вариантов)
 public class GetOrdersListTest {
 
     @Test

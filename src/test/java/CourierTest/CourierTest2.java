@@ -1,16 +1,16 @@
 /*Создание курьера
 Проверь:
--курьера можно создать;
--нельзя создать двух одинаковых курьеров;
--чтобы создать курьера, нужно передать в ручку все обязательные поля;
--запрос возвращает правильный код ответа;
--успешный запрос возвращает ok: true;
--если одного из полей нет, запрос возвращает ошибку;
--если создать пользователя с логином, который уже есть, возвращается ошибка.
+- курьера можно создать;
+- нельзя создать двух одинаковых курьеров;
+- чтобы создать курьера, нужно передать в ручку все обязательные поля;
+- запрос возвращает правильный код ответа;
+- успешный запрос возвращает ok: true;
+- если одного из полей нет, запрос возвращает ошибку;
+- если создать пользователя с логином, который уже есть, возвращается ошибка.
+- все данные нужно удалять после того, как тест выполнится.
 */
 
-//Тесты со всеми вынесенными методами в отдельный класс (как один из вариантов)
-
+// Тесты со всеми вынесенными методами в отдельный класс (как один из вариантов)
 package CourierTest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -41,7 +41,7 @@ public class CourierTest2 {
     public void tearDown() {
         // Удаление курьера после каждого теста, если ID был получен
         if (courierId != -1) {
-            courierHelper.deleteCourier(courierId);  // Удаление курьера
+            courierHelper.deleteCourier(courierId);
         }
     }
 
@@ -51,7 +51,7 @@ public class CourierTest2 {
         gson = new GsonBuilder().setPrettyPrinting().create(); // Инициализация gson
     }
 
-    //Тест что курьера можно создать
+    // Тест что курьера можно создать
     @Test
     @Story("Create a new courier")
     @Severity(SeverityLevel.CRITICAL)
@@ -73,8 +73,8 @@ public class CourierTest2 {
         courierId = courierHelper.authorizeCourier(DEFAULT_LOGIN, DEFAULT_PASSWORD);
     }
 
-    //Тест что нельзя создать двух одинаковых курьеров
-    //и если создать пользователя с логином, который уже есть, возвращается ошибка
+    // Тест что нельзя создать двух одинаковых курьеров
+    // и если создать пользователя с логином, который уже есть, возвращается ошибка
     @Test
     @Story("Prevent duplicate courier creation")
     @Severity(SeverityLevel.NORMAL)
@@ -109,7 +109,7 @@ public class CourierTest2 {
         assertThat(courierId, is(not(-1)));
     }
 
-    //Тест чтобы создать курьера, нужно передать в ручку все обязательные поля
+    // Тест чтобы создать курьера, нужно передать в ручку все обязательные поля
     @Test
     @Story("Validate required fields for courier creation")
     @Severity(SeverityLevel.CRITICAL)
@@ -133,7 +133,7 @@ public class CourierTest2 {
         courierId = courierHelper.authorizeCourier(DEFAULT_LOGIN, DEFAULT_PASSWORD);
     }
 
-    //Тест на запрос создание курьера, возвращает правильный код ответа
+    // Тест на запрос создание курьера, возвращает правильный код ответа
     @Test
     @Story("Validate status code 201 for successful courier creation")
     @Severity(SeverityLevel.MINOR)
@@ -149,7 +149,7 @@ public class CourierTest2 {
         courierId = courierHelper.authorizeCourier(DEFAULT_LOGIN, DEFAULT_PASSWORD);
     }
 
-    //Тест на успешный запрос создания курьера, возвращает ok: true
+    // Тест на успешный запрос создания курьера, возвращает ok: true
     @Test
     @Story("Validate 'ok: true' for successful courier creation")
     @Severity(SeverityLevel.CRITICAL)
@@ -165,7 +165,7 @@ public class CourierTest2 {
         courierId = courierHelper.authorizeCourier(DEFAULT_LOGIN, DEFAULT_PASSWORD);
     }
 
-    //Тест если одного из полей нет, запрос возвращает ошибку
+    // Тест если одного из полей нет, запрос возвращает ошибку
     // Тест 1: Пропущено поле login
     @Test
     @Story("Validate error for missing required fields in courier creation")
@@ -190,7 +190,7 @@ public class CourierTest2 {
         assertThat(response.jsonPath().getString("message"), is(expectedMessage));
     }
 
-    //Тест если одного из полей нет, запрос возвращает ошибку
+    // Тест если одного из полей нет, запрос возвращает ошибку
     // Тест 2: Пропущено поле password
     @Test
     @Story("Validate error for missing required fields in courier creation")
@@ -215,8 +215,8 @@ public class CourierTest2 {
         assertThat(response.jsonPath().getString("message"), is(expectedMessage));
     }
 
-    //Тест 3: Пропущено поле firstName
-    //*Тест не проходит: баг*
+    // Тест 3: Пропущено поле firstName
+    // *Тест не проходит: баг*
     @Test
     @Story("Validate error for missing required fields in courier creation")
     @Severity(SeverityLevel.CRITICAL)

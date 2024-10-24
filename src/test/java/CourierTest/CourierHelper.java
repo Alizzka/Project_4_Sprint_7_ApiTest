@@ -1,5 +1,5 @@
+// Класс с методами
 package CourierTest;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -7,7 +7,6 @@ import com.google.gson.JsonParser;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
@@ -25,20 +24,22 @@ public class CourierHelper {
         return gson.toJson(jsonElement);
     }
 
+    // Метод для проверки соответствия кода ответа ожидаемому значению
     public void checkStatusCode(Response response, int expectedStatusCode) {
         assertThat(response.getStatusCode(), is(expectedStatusCode));
     }
 
+    // Метод для проверки сообщения об ошибке
     public void checkErrorMessage(Response response, String expectedMessage) {
         assertThat(response.jsonPath().getString("message"), is(expectedMessage));
     }
 
-    //Метод создания тела запроса
+    // Метод создания тела запроса
     public String createRequestBody(String login, String password, String firstName) {
         return "{ \"login\": \"" + login + "\", \"password\": \"" + password + "\", \"firstName\": \"" + firstName + "\" }";
     }
 
-    //Метод отправки пост запроса
+    // Метод отправки POST запроса
     @Step("create courier")
     public Response createCourier(String body) {
         return RestAssured.given()
@@ -48,17 +49,12 @@ public class CourierHelper {
                 .post("/api/v1/courier");
     }
 
-    //Метод для авторизации
+    // Метод для авторизации
     public int authorizeCourier(String login, String password) {
         int courierId = getCourierId(login, password);
         assertThat(courierId, is(not(-1))); // Убедитесь, что ID корректен
         return courierId;
     }
-
-
-
-
-
 
     // Метод для получения ID курьера по логину и паролю
     public int getCourierId(String login, String password) {

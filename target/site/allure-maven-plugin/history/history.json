@@ -9,12 +9,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "8da2d0b69e923529",
+      "uid" : "ff3e4f16a90cb512",
       "status" : "passed",
       "time" : {
-        "start" : 1729759784897,
-        "stop" : 1729759786100,
-        "duration" : 1203
+        "start" : 1729804477132,
+        "stop" : 1729804477736,
+        "duration" : 604
       }
     } ]
   },
@@ -28,12 +28,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "e0c9c699e5d96dac",
+      "uid" : "2f095eb568e6848c",
       "status" : "passed",
       "time" : {
-        "start" : 1729759819302,
-        "stop" : 1729759821437,
-        "duration" : 2135
+        "start" : 1729804538712,
+        "stop" : 1729804539835,
+        "duration" : 1123
       }
     } ]
   },
@@ -47,12 +47,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "be0e5f3596754529",
+      "uid" : "bce85b8f37644000",
       "status" : "passed",
       "time" : {
-        "start" : 1729759782523,
-        "stop" : 1729759783702,
-        "duration" : 1179
+        "start" : 1729804475887,
+        "stop" : 1729804476558,
+        "duration" : 671
       }
     } ]
   },
@@ -66,33 +66,32 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "f5d9b6519db2e046",
+      "uid" : "5191445300cc2e29",
       "status" : "failed",
       "statusDetails" : "1 expectation failed.\nExpected status code <200> but was <404>.\n",
       "time" : {
-        "start" : 1729759821441,
-        "stop" : 1729759883956,
-        "duration" : 62515
+        "start" : 1729804539840,
+        "stop" : 1729804600927,
+        "duration" : 61087
       }
     } ]
   },
   "edb285af3c1a1d7c71e6122581919d5" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "5d823a8336b8567a",
-      "status" : "broken",
-      "statusDetails" : "Ошибка при удалении заказа. Код ответа: 404, Тело ответа: {\"code\":404,\"message\":\"Not Found.\"}",
+      "uid" : "1504c48f789eb0a0",
+      "status" : "passed",
       "time" : {
-        "start" : 1729759789216,
-        "stop" : 1729759789645,
-        "duration" : 429
+        "start" : 1729804479047,
+        "stop" : 1729804479154,
+        "duration" : 107
       }
     } ]
   },
@@ -106,13 +105,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "a0540dad1b8dd3d1",
+      "uid" : "97f30168f97f9259",
       "status" : "failed",
       "statusDetails" : "\nExpected: is <400>\n     but: was <201>",
       "time" : {
-        "start" : 1729759782083,
-        "stop" : 1729759782519,
-        "duration" : 436
+        "start" : 1729804475667,
+        "stop" : 1729804475883,
+        "duration" : 216
       }
     } ]
   },
@@ -126,12 +125,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "809113a1c8e35de",
+      "uid" : "f2387ac36b4174d7",
       "status" : "passed",
       "time" : {
-        "start" : 1729759818872,
-        "stop" : 1729759819298,
-        "duration" : 426
+        "start" : 1729804538504,
+        "stop" : 1729804538705,
+        "duration" : 201
       }
     } ]
   },
@@ -145,12 +144,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "58ea6c1efa62cf8c",
+      "uid" : "b4d4e0477ad3f960",
       "status" : "passed",
       "time" : {
-        "start" : 1729759776658,
-        "stop" : 1729759779904,
-        "duration" : 3246
+        "start" : 1729804471275,
+        "stop" : 1729804474366,
+        "duration" : 3091
       }
     } ]
   },
@@ -164,52 +163,50 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "93831aec3c4cf27c",
+      "uid" : "392d63eb71a43f9a",
       "status" : "passed",
       "time" : {
-        "start" : 1729759783712,
-        "stop" : 1729759784888,
-        "duration" : 1176
+        "start" : 1729804476567,
+        "stop" : 1729804477127,
+        "duration" : 560
       }
     } ]
   },
   "55724b994e66fac05f58e05a47d0a676" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "1513b265caaa8981",
-      "status" : "broken",
-      "statusDetails" : "Ошибка при удалении заказа. Код ответа: 404, Тело ответа: {\"code\":404,\"message\":\"Not Found.\"}",
+      "uid" : "e4156d407ce29a",
+      "status" : "passed",
       "time" : {
-        "start" : 1729759787265,
-        "stop" : 1729759788285,
-        "duration" : 1020
+        "start" : 1729804478293,
+        "stop" : 1729804478854,
+        "duration" : 561
       }
     } ]
   },
   "1ee9617ff79e93910b2981b4fd6ab105" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "e534917f1837b18b",
-      "status" : "broken",
-      "statusDetails" : "Ошибка при удалении заказа. Код ответа: 404, Тело ответа: {\"code\":404,\"message\":\"Not Found.\"}",
+      "uid" : "5400271892e65d0",
+      "status" : "passed",
       "time" : {
-        "start" : 1729759788754,
-        "stop" : 1729759789212,
-        "duration" : 458
+        "start" : 1729804478965,
+        "stop" : 1729804479046,
+        "duration" : 81
       }
     } ]
   },
@@ -223,12 +220,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "46489090838eb044",
+      "uid" : "a59e2e7a58df1db8",
       "status" : "passed",
       "time" : {
-        "start" : 1729759789661,
-        "stop" : 1729759818866,
-        "duration" : 29205
+        "start" : 1729804479156,
+        "stop" : 1729804538499,
+        "duration" : 59343
       }
     } ]
   },
@@ -242,32 +239,31 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "e888cc9c265a7519",
+      "uid" : "c1d9662d2bdd239",
       "status" : "passed",
       "time" : {
-        "start" : 1729759883961,
-        "stop" : 1729759885440,
-        "duration" : 1479
+        "start" : 1729804600931,
+        "stop" : 1729804601564,
+        "duration" : 633
       }
     } ]
   },
   "72f40cd2436fd353e579f01248967c5e" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "29961e815d3389f8",
-      "status" : "broken",
-      "statusDetails" : "Ошибка при удалении заказа. Код ответа: 404, Тело ответа: {\"code\":404,\"message\":\"Not Found.\"}",
+      "uid" : "359412b9359e4d78",
+      "status" : "passed",
       "time" : {
-        "start" : 1729759788296,
-        "stop" : 1729759788749,
-        "duration" : 453
+        "start" : 1729804478858,
+        "stop" : 1729804478963,
+        "duration" : 105
       }
     } ]
   },
@@ -281,12 +277,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "3a19d2bc119f7551",
+      "uid" : "d43abf99cda77ff3",
       "status" : "passed",
       "time" : {
-        "start" : 1729759779974,
-        "stop" : 1729759781618,
-        "duration" : 1644
+        "start" : 1729804474460,
+        "stop" : 1729804475449,
+        "duration" : 989
       }
     } ]
   },
@@ -300,12 +296,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "166dde3b0737e3db",
+      "uid" : "7ea0207ae88a5a5c",
       "status" : "passed",
       "time" : {
-        "start" : 1729759781626,
-        "stop" : 1729759782080,
-        "duration" : 454
+        "start" : 1729804475456,
+        "stop" : 1729804475663,
+        "duration" : 207
       }
     } ]
   },
@@ -319,12 +315,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "f92cc27372d9e3d5",
+      "uid" : "565a1f07b682428f",
       "status" : "passed",
       "time" : {
-        "start" : 1729759786106,
-        "stop" : 1729759787236,
-        "duration" : 1130
+        "start" : 1729804477743,
+        "stop" : 1729804478268,
+        "duration" : 525
       }
     } ]
   }

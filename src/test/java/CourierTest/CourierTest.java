@@ -1,16 +1,16 @@
 /*Создание курьера
 Проверь:
--курьера можно создать;
--нельзя создать двух одинаковых курьеров;
--чтобы создать курьера, нужно передать в ручку все обязательные поля;
--запрос возвращает правильный код ответа;
--успешный запрос возвращает ok: true;
--если одного из полей нет, запрос возвращает ошибку;
--если создать пользователя с логином, который уже есть, возвращается ошибка.
+- курьера можно создать;
+- нельзя создать двух одинаковых курьеров;
+- чтобы создать курьера, нужно передать в ручку все обязательные поля;
+- запрос возвращает правильный код ответа;
+- успешный запрос возвращает ok: true;
+- если одного из полей нет, запрос возвращает ошибку;
+- если создать пользователя с логином, который уже есть, возвращается ошибка.
+- все данные нужно удалять после того, как тест выполнится.
 */
 
-//Тесты с частично вынесенными методами в отдельный класс (как один из вариантов)
-
+// Тесты с частично вынесенными методами в отдельный класс (как один из вариантов)
 package CourierTest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -37,7 +37,7 @@ public class CourierTest {
     public void tearDown() {
         // Удаление курьера после каждого теста, если ID был получен
         if (courierId != -1) {
-            courierHelper.deleteCourier(courierId);  // Удаление курьера
+            courierHelper.deleteCourier(courierId);
         }
     }
 
@@ -47,14 +47,14 @@ public class CourierTest {
         gson = new GsonBuilder().setPrettyPrinting().create(); // Инициализация gson
     }
 
-    //Тест что курьера можно создать
+    // Тест что курьера можно создать
     @Test
     @Story("Create a new courier")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that creating a new courier is possible and returns the correct response")
     public void testCreateCourierIsPossible() {
-        String login = "qazhof"; // Логин
-        String password = "1234"; // Пароль
+        String login = "qazhof";
+        String password = "1234";
         String body = "{ \"login\": \"" + login + "\", \"password\": \"" + password + "\", \"firstName\": \"saske\" }";
 
         Response response = RestAssured.given()
@@ -64,19 +64,16 @@ public class CourierTest {
                 .post("/api/v1/courier");
         // Проверяем код ответа
         assertThat(response.getStatusCode(), is(201));
-
         // Проверяем, что тело ответа содержит "ok: true"
         assertThat(response.jsonPath().get("ok"), is(true));
-
         // Авторизуемся, чтобы получить ID курьера
         courierId = courierHelper.getCourierId(login, password); // Сохраняем ID курьера
-
         // Проверяем ID курьера получен корректно
         assertThat(courierId, is(not(-1))); // Убедитесь, что ID не -1
     }
 
-    //Тест что нельзя создать двух одинаковых курьеров
-    //и если создать пользователя с логином, который уже есть, возвращается ошибка
+    // Тест что нельзя создать двух одинаковых курьеров
+    // и если создать пользователя с логином, который уже есть, возвращается ошибка
     @Test
     @Story("Prevent duplicate courier creation")
     @Severity(SeverityLevel.NORMAL)
@@ -85,46 +82,37 @@ public class CourierTest {
         String login = "qazhof"; // Логин
         String password = "1234"; // Пароль
         String body = "{ \"login\": \"" + login + "\", \"password\": \"" + password + "\", \"firstName\": \"saske\" }";
-
         // Отправляем первый запрос для создания курьера
         Response firstResponse = RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(body)
                 .when()
                 .post("/api/v1/courier");
-
         // Проверяем код ответа первого запроса
         assertThat(firstResponse.getStatusCode(), is(201));
         System.out.println("Курьер успешно создан. Код ответа: " + firstResponse.getStatusCode());
-
         // Отправляем второй запрос для создания того же курьера
         Response secondResponse = RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(body)
                 .when()
                 .post("/api/v1/courier");
-
         // Используем метод printResponse из CourierHelper для вывода второго ответа
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         courierHelper.printResponse(secondResponse, gson); // Вызов метода для второго запроса
-
         // Код ответа второго запроса
         assertThat(secondResponse.getStatusCode(), is(409)); // Ожидаем ошибку 409
-
         // Ожидаемое сообщение об ошибке
         String expectedMessage = "Этот логин уже используется. Попробуйте другой.";
-
         // Проверяем правильное сообщение об ошибке
         assertThat(secondResponse.jsonPath().getString("message"), is(expectedMessage));
-
         // Авторизуемся, чтобы получить ID курьера
         courierId = courierHelper.getCourierId(login, password); // Сохраняем ID курьера
-
         // Проверяем ID курьера получен корректно
         assertThat(courierId, is(not(-1))); // Убедитесь, что ID не -1
     }
 
-    //Тест чтобы создать курьера, нужно передать в ручку все обязательные поля
+    // Тест чтобы создать курьера, нужно передать в ручку все обязательные поля
     @Test
     @Story("Validate required fields for courier creation")
     @Severity(SeverityLevel.CRITICAL)
@@ -134,32 +122,26 @@ public class CourierTest {
         String login = "qazhof";
         String password = "1234";
         String body = "{ \"login\": \"" + login + "\", \"password\": \"" + password + "\", \"firstName\": \"saske\" }";
-
         // Отправляем POST запрос
         Response response = RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(body)
                 .when()
                 .post("/api/v1/courier");
-
         // Используем метод printResponse из CourierHelper для вывода ответа
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         courierHelper.printResponse(response, gson); // Вызов метода
-
         // Код ответа
         assertThat(response.getStatusCode(), is(201));
-
         // Проверяем, что тело ответа содержит "ok: true"
         assertThat(response.jsonPath().get("ok"), is(true));
-
         //Авторизуемся, чтобы получить ID курьера
         courierId = courierHelper.getCourierId(login, password); // Сохраняем ID курьера
-
         // Проверяем ID курьера получен корректно
         assertThat(courierId, is(not(-1))); // Убедитесь, что ID не -1
     }
 
-    //Тест на запрос создание курьера, возвращает правильный код ответа
+    // Тест на запрос создание курьера, возвращает правильный код ответа
     @Test
     @Story("Validate status code 201 for successful courier creation")
     @Severity(SeverityLevel.MINOR)
@@ -168,27 +150,22 @@ public class CourierTest {
         String login = "qazhof"; // Логин
         String password = "1234"; // Пароль
         String body = "{ \"login\": \"" + login + "\", \"password\": \"" + password + "\", \"firstName\": \"saske\" }";
-
         Response response = RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(body)
                 .when()
                 .post("/api/v1/courier");
-
         // Выводим код ответа на экран
         System.out.println("Код ответа: " + response.getStatusCode());
-
         // Код ответа
         assertThat(response.getStatusCode(), is(201));
-
         // Авторизуемся, чтобы получить ID курьера
         courierId = courierHelper.getCourierId(login, password); // Сохраняем ID курьера
-
         // Проверяем ID курьера
-        assertThat(courierId, is(not(-1))); // Убедитесь, что ID не -1
+        assertThat(courierId, is(not(-1))); // Проверяем что ID не -1
     }
 
-    //Тест на успешный запрос создания курьера, возвращает ok: true
+    // Тест на успешный запрос создания курьера, возвращает ok: true
     @Test
     @Story("Validate 'ok: true' for successful courier creation")
     @Severity(SeverityLevel.CRITICAL)
@@ -198,29 +175,24 @@ public class CourierTest {
         String login = "qazhof"; // Логин
         String password = "1234"; // Пароль
         String body = "{ \"login\": \"" + login + "\", \"password\": \"" + password + "\", \"firstName\": \"saske\" }";
-
         // Отправляем POST запрос
         Response response = RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(body)
                 .when()
                 .post("/api/v1/courier");
-
         // Используем метод printResponse из CourierHelper для вывода ответа
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         courierHelper.printResponse(response, gson); // Вызов метода
-
         // Проверяем, что тело ответа содержит "ok: true"
         assertThat(response.jsonPath().get("ok"), is(true));
-
         // Авторизуемся, чтобы получить ID курьера
         courierId = courierHelper.getCourierId(login, password); // Сохраняем ID курьера
-
         // Проверяем ID курьера
         assertThat(courierId, is(not(-1))); // Убедитесь, что ID не -1
     }
 
-    //Тест если одного из полей нет, запрос возвращает ошибку
+    // Тест если одного из полей нет, запрос возвращает ошибку
     // Тест 1: Пропущено поле login
     @Test
     @Story("Validate error for missing required fields in courier creation")
@@ -228,7 +200,6 @@ public class CourierTest {
     @Description("Verify that creating a courier without a login returns an error")
     public void testCreateCourierWithoutLogin() {
         String bodyWithoutLogin = "{ \"password\": \"1234\", \"firstName\": \"saske\" }";
-
         // Сообщение об ошибке
         String expectedMessage = "Недостаточно данных для создания учетной записи";
 
@@ -237,66 +208,56 @@ public class CourierTest {
                 .body(bodyWithoutLogin)
                 .when()
                 .post("/api/v1/courier");
-
         // Используем метод printResponse из CourierHelper для вывода ответа
         courierHelper.printResponse(response, gson);
-
         // Код ответа и сообщение
         assertThat(response.getStatusCode(), is(400));
         System.out.println("Курьер не создан: пропущено поле login");
         assertThat(response.jsonPath().getString("message"), is(expectedMessage));
     }
 
-    //Тест если одного из полей нет, запрос возвращает ошибку
+    // Тест если одного из полей нет, запрос возвращает ошибку
     // Тест 2: Пропущено поле password
     @Test
     @Story("Validate error for missing required fields in courier creation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that creating a courier without a password returns an error")
     public void testCreateCourierWithoutPassword() {
-        String login = "qazhof" + System.currentTimeMillis(); // Уникальный логин
+        String login = "qazhof" + System.currentTimeMillis();
         String bodyWithoutPassword = "{ \"login\": \"" + login + "\", \"firstName\": \"saske\" }";
-
         // Сообщение об ошибке
         String expectedMessage = "Недостаточно данных для создания учетной записи";
-
         Response response = RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(bodyWithoutPassword)
                 .when()
                 .post("/api/v1/courier");
-
         // Используем метод printResponse из CourierHelper для вывода ответа
         courierHelper.printResponse(response, gson);
-
         // Код ответа и сообщение
         assertThat(response.getStatusCode(), is(400));
         System.out.println("Курьер не создан: пропущено поле password");
         assertThat(response.jsonPath().getString("message"), is(expectedMessage));
     }
 
-    //Тест 3: Пропущено поле firstName
-    //*Тест не проходит: баг*
+    // Тест 3: Пропущено поле firstName
+    // *Тест не проходит: баг*
     @Test
     @Story("Validate error for missing required fields in courier creation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that creating a courier without a first name returns an error")
     public void testCreateCourierWithoutFirstName() {
-        String login = "qazhof" + System.currentTimeMillis(); // Уникальный логин
+        String login = "qazhof" + System.currentTimeMillis();
         String bodyWithoutFirstName = "{ \"login\": \"" + login + "\", \"password\": \"1234\" }";
-
         // Сообщение об ошибке
         String expectedMessage = "Недостаточно данных для создания учетной записи";
-
         Response response = RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(bodyWithoutFirstName)
                 .when()
                 .post("/api/v1/courier");
-
         // Используем метод printResponse из CourierHelper для вывода ответа
         courierHelper.printResponse(response, gson);
-
         // Код ответа и сообщение
         assertThat(response.getStatusCode(), is(400));
         System.out.println("Курьер не создан: пропущено поле firstName");
