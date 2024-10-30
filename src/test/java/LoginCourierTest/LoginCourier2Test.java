@@ -3,6 +3,7 @@
 // Без аннотации After чтобы курьер не удалялся дважды, так как нужно получить id курьера для авторизации,
 // при получении которого курьер удаляется, если есть аннотация after в классе.
 package LoginCourierTest;
+import CourierTest.ApiConstants;
 import CourierTest.CourierHelper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -28,10 +29,17 @@ public class LoginCourier2Test {
     private int courierId = -1; // Переменная для хранения ID курьера
     private CourierTest.CourierHelper courierHelper = new CourierHelper(); // Экземпляр вспомогательного класса
 
-    @Before
+    /*@Before
     @Step("Set up test environment")
     public void setUp() {
         RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru/";
+        gson = new GsonBuilder().setPrettyPrinting().create(); // Инициализация gson
+    }*/
+
+    // С вынесенным URI в отдельный класс
+    @Before
+    public void setUp() {
+        RestAssured.baseURI = ApiConstants.BASE_URI;
         gson = new GsonBuilder().setPrettyPrinting().create(); // Инициализация gson
     }
 

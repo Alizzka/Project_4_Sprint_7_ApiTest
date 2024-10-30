@@ -10,6 +10,7 @@
 */
 
 package LoginCourierTest;
+import CourierTest.ApiConstants;
 import CourierTest.CourierHelper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -44,10 +45,17 @@ public class LoginCourierTest {
         }
     }
 
-    @Before
+    /*@Before
     @Step("Set up test environment")
     public void setUp() {
         RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru/";
+        gson = new GsonBuilder().setPrettyPrinting().create(); // Инициализация gson
+    }*/
+
+    // С вынесенным URI в отдельный класс
+    @Before
+    public void setUp() {
+        RestAssured.baseURI = ApiConstants.BASE_URI;
         gson = new GsonBuilder().setPrettyPrinting().create(); // Инициализация gson
     }
 
